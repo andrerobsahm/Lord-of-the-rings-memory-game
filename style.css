@@ -1,3 +1,38 @@
 * {
     box-sizing: border-box;
 }
+html {
+    margin:0;
+}
+
+body {
+    font-family: Avenir, sans sans-serif;
+    background-color: ghostWhite;
+    margin: 0;
+}
+header {
+    padding: 1%;
+    background-color: tomato;
+    text-align: center;
+    margin-bottom: 2%;
+}
+
+#memory_bord {
+    display: grid;
+    width: 100%;
+    grid-template-columns:repeat(4, 1fr);
+    grid-template-rows:repeat(4, 1fr);
+    grid-gap: 15px;
+    justify-items: center;
+}
+
+#memory_bord > div {
+    border-radius: 4px;
+    background: url(nasa.jpg) no-repeat;
+    width: 200px;
+    height:200px;
+    cursor: pointer;
+}
+
+.card {
+}
