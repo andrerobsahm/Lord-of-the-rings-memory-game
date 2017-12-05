@@ -1,23 +1,21 @@
 * {
     box-sizing: border-box;
 }
-html {
-    margin:0;
-}
 
 body {
-    font-family: Avenir, sans sans-serif;
+    font-family: Avenir, sans-serif;
     background-color: ghostWhite;
-    margin: 0;
 }
+
 header {
     padding: 1%;
     background-color: tomato;
     text-align: center;
-    margin-bottom: 2%;
+    margin-bottom: 3%;
+    box-shadow: 0px 3px 10px #888;
 }
 
-#memory_bord {
+#memory_board {
     display: grid;
     width: 100%;
     grid-template-columns:repeat(4, 1fr);
@@ -26,13 +24,32 @@ header {
     justify-items: center;
 }
 
-#memory_bord > div {
+#memory_board > div {
     border-radius: 4px;
     background: url(nasa.jpg) no-repeat;
-    width: 200px;
-    height:200px;
+    width: 175px;
+    height:190px;
+    box-shadow: 5px 5px 10px #888;
+    cursor: pointer;
+}
+
+button {
+    width: auto;
+    height:auto;
+    text-align: center;
+    font-size: 1em;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px #888;
+    font-family: Avenir, sans-serif;
     cursor: pointer;
 }
 
 .card {
+}
+
+
+.clicked {
+    transform-origin: center;
+    transform: rotateX(180deg);
+    pointer-events:none;
 }
