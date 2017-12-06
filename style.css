@@ -4,7 +4,8 @@
 
 body {
     font-family: Avenir, sans-serif;
-    background-color: ghostWhite;
+    background-color: #3E4454;
+    background: -webkit-linear-gradient(180deg, #F2EDEB, #3E4454);
 }
 
 header {
@@ -25,12 +26,21 @@ header {
 }
 
 #memory_board > div {
-    border-radius: 4px;
     background: url(nasa.jpg) no-repeat;
+    position: relative;
+    width: 175px;
+    height:190px;
+    cursor: pointer;
+    /*background-color: tomato;*/
+}
+div > img {
+    border-radius: 4px;
+    position: absolute;
     width: 175px;
     height:190px;
     box-shadow: 5px 5px 10px #888;
-    cursor: pointer;
+    pointer-events:none;
+    opacity: 0;
 }
 
 button {
@@ -44,12 +54,22 @@ button {
     cursor: pointer;
 }
 
-.card {
+
+/*--- WHEN CARD IS CLICKED ---*/
+.clicked {
+    /*transform-origin: center;
+    transform: rotateX(180deg);*/
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+
+    transition: 0.8s;
+    pointer-events:none;
+    /*transition: 0.5s ease-in;*/
+    /*background-image: none;*/
 }
 
-
-.clicked {
-    transform-origin: center;
-    transform: rotateX(180deg);
-    pointer-events:none;
+.imgClicked {
+    opacity: 1;
 }
