@@ -1,7 +1,7 @@
 'use strict';
 
 let divArray = [];
-let compArray = []; //where we compare is its a match
+let compArray = []; //where we compare if its a match
 
 
 // --- COMPARE SELECTED CARDS, AND CLEAR AFTER COMPARISON ---
@@ -15,23 +15,30 @@ let compareFunction = (dataset) => {
             pairCounter++; //add if match
             console.log(pairCounter);
 
+            compArray = []; //empty comparison array
+            divArray = []; //empty div array
+
             if (pairCounter == 8) {
                 console.log('Congratz, you\'ve made it!');
             }
         }
 
         else {
-            //Flips back if not match
+            //Flip back if not match, aka remove clicked class
             console.log('loser...');
 
             setTimeout(function() {
                 divArray[0].classList.remove('clicked');
                 divArray[1].classList.remove('clicked');
-                // divArray = [];
-            }, 700);
+                divArray[0].querySelector('img').classList.remove('imgClicked');
+                divArray[1].querySelector('img').classList.remove('imgClicked');
+                compArray = []; //empty comparison array
+                divArray = []; //empty div array
+
+            }, 600);
         }
 
-        compArray = [];
+        // compArray = [];
     }
 }
 
@@ -43,10 +50,10 @@ cards.forEach((cardEach) => {
 
         //--- FLIP CARDS ---
         let currentDiv = e.target;
-        currentDiv.classList.toggle('clicked')
+        currentDiv.classList.toggle('clicked');
 
-        let currentImg = currentDiv.querySelector('img')
-        currentImg.classList.add('imgClicked')
+        let currentImg = currentDiv.querySelector('img');
+        currentImg.classList.add('imgClicked');
 
         //--- PUSH TO COMPARE FUNCTION ---
         let currentCard = e.target.dataset.card;

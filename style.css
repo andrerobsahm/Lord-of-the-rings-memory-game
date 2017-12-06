@@ -4,8 +4,10 @@
 
 body {
     font-family: Avenir, sans-serif;
-    background-color: #3E4454;
-    background: -webkit-linear-gradient(180deg, #F2EDEB, #3E4454);
+    background-image:url(./images/background_2.jpg);
+    background-attachment: fixed;
+     background-color: #3E4454;
+    background: -webkit-linear-gradient(180deg, #F2EDEB, #3E4454);*/
 }
 
 header {
@@ -28,16 +30,15 @@ header {
 #memory_board > div {
     background: url(nasa.jpg) no-repeat;
     position: relative;
-    width: 175px;
-    height:190px;
+    width: 180px;
+    height:180px;
     cursor: pointer;
-    /*background-color: tomato;*/
 }
 div > img {
     border-radius: 4px;
     position: absolute;
-    width: 175px;
-    height:190px;
+    width: 100%;
+    height:100%;
     box-shadow: 5px 5px 10px #888;
     pointer-events:none;
     opacity: 0;
