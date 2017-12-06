@@ -6,7 +6,7 @@ body {
     font-family: Avenir, sans-serif;
     background-image:url(./images/background_2.jpg);
     background-attachment: fixed;
-     background-color: #3E4454;
+    /* background-color: #3E4454;
     background: -webkit-linear-gradient(180deg, #F2EDEB, #3E4454);*/
 }
 
@@ -20,25 +20,30 @@ header {
 
 #memory_board {
     display: grid;
-    width: 100%;
+    width: 80%;
     grid-template-columns:repeat(4, 1fr);
     grid-template-rows:repeat(4, 1fr);
     grid-gap: 15px;
-    justify-items: center;
+    justify-content: center;
+    align-content: center;
 }
 
 #memory_board > div {
-    background: url(nasa.jpg) no-repeat;
+    background: url(./images/lotr.jpg) no-repeat;
+    background-color: white;
     position: relative;
     width: 180px;
-    height:180px;
+    height:200px;
+    grid
     cursor: pointer;
+    transition: 0.7s ease;
 }
+
 div > img {
     border-radius: 4px;
     position: absolute;
     width: 100%;
-    height:100%;
+    height: 100%;
     box-shadow: 5px 5px 10px #888;
     pointer-events:none;
     opacity: 0;
@@ -55,6 +60,12 @@ button {
     cursor: pointer;
 }
 
+.winSection {
+    background-color: white;
+    padding: 5%;
+    margin-bottom: 2%;
+    display: none;
+}
 
 /*--- WHEN CARD IS CLICKED ---*/
 .clicked {
@@ -64,13 +75,14 @@ button {
     -moz-transform: rotateY(180deg);
     -o-transform: rotateY(180deg);
     transform: rotateY(180deg);
-
-    transition: 0.8s;
     pointer-events:none;
-    /*transition: 0.5s ease-in;*/
+
+    /*transition: 0.8s;*/
+    /*transition: 0.7s ease-in-out;*/
     /*background-image: none;*/
 }
 
 .imgClicked {
     opacity: 1;
+    transition: 0.66s ease;
 }

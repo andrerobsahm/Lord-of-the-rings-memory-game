@@ -1,12 +1,44 @@
 'use strict';
 
-let divArray = [];
+let cards = document.querySelectorAll('.card');
 let compArray = []; //where we compare if its a match
+let pairCounter = 0; //counts number of pairs
+let divArray = [];
+
+
+// --- CREATE A NEW BOARD ---
+let memoryBoard = document.querySelector('#memory_board');
+
+for (let i = memoryBoard.children.length; i >= 0; i--) {
+    memoryBoard.appendChild(memoryBoard.children[Math.random() * i | 0]);
+}
+
+
+// --- ADD CLICK AND SEND TO THE COMPARISON ARRAY ---
+cards.forEach((cardEach) => {
+    cardEach.addEventListener('click', (e) => {
+
+        //--- FLIP CARDS ---
+        let currentDiv = e.target;
+            currentDiv.classList.toggle('clicked');
+
+        let currentImg = currentDiv.querySelector('img');
+            currentImg.classList.add('imgClicked');
+
+        //--- PUSH TO COMPARE FUNCTION ---
+        let currentCard = e.target.dataset.card;
+        let compare = compArray.push(currentCard);
+        // console.log(currentCard);
+
+        //--- PUSH TO THE DIV ARRAY ---
+        divArray.push(currentDiv);
+
+        return compareFunction(currentCard);
+    })
+})
 
 
 // --- COMPARE SELECTED CARDS, AND CLEAR AFTER COMPARISON ---
-let pairCounter = 0; //counts number of pairs
-
 let compareFunction = (dataset) => {
     if (compArray.length == 2) {
         if (compArray[0] == compArray[1]) {
@@ -35,46 +67,25 @@ let compareFunction = (dataset) => {
                 compArray = []; //empty comparison array
                 divArray = []; //empty div array
 
-            }, 600);
+            }, 700);
         }
-
-        // compArray = [];
     }
 }
 
-// --- ADD CLICK EVENT AND SEND TO THE COMPARISON ARRAY ---
-let cards = document.querySelectorAll('.card');
-
-cards.forEach((cardEach) => {
-    cardEach.addEventListener('click', (e) => {
-
-        //--- FLIP CARDS ---
-        let currentDiv = e.target;
-        currentDiv.classList.toggle('clicked');
-
-        let currentImg = currentDiv.querySelector('img');
-        currentImg.classList.add('imgClicked');
-
-        //--- PUSH TO COMPARE FUNCTION ---
-        let currentCard = e.target.dataset.card;
-        let compare = compArray.push(currentCard);
-        console.log(currentCard);
-
-        // PUSH TO ...
-        divArray.push(currentDiv);
-
-        return compareFunction(currentCard);
+//--- GENERERATE NEW MEMORY BOARD - RESET BUTTON ---
+function resetBoard() {
+    cards.forEach((card) => {
+        card.querySelector('img').classList.remove('imgClicked');
+        card.classList.remove('clicked');
+        compArray = []; //empty comparison array
+        divArray = []; //empty div array
     })
-});
 
-
-// --- SHUFFLE CARDS ---
-let memoryBoard = document.querySelector('#memory_board');
-
-for (let i = memoryBoard.children.length; i >= 0; i--) {
-    memoryBoard.appendChild(memoryBoard.children[Math.random() * i | 0]);
+    for (let i = memoryBoard.children.length; i >= 0; i--) {
+        memoryBoard.appendChild(memoryBoard.children[Math.random() * i | 0]);
+    }
 }
 
-
-
-//--- GENERERATE NEW MEMORY BOARD ---
+document.querySelector('.reset').addEventListener('click', function() {
+    return resetBoard();
+})

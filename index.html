@@ -11,8 +11,15 @@
     <body>
         <header>
             <h1>Welcome</h1>
-            <h3>To a Fuzzy memory game!</h3>
+            <h3>To The LOTR Memory Game!</h3>
         </header>
+
+        <!-- to slid in from top if success -->
+        <section class="winSection">
+            <h3>Congratulations, you just solved the puzzle! Do you want to have another go?</h3>
+            <!-- <button class="reset" type="button" name="button">Create new board</button> -->
+        </section>
+
 
         <section id="memory_board">
             <div class="card" data-card="0">
@@ -80,7 +87,7 @@
             </div>
         </section>
 
-        <button type="button" name="button">Reset board!</button>
+        <button class="reset" type="button" name="button">Start over!</button>
 
         <script type="text/javascript" src="script.js"></script>
 
