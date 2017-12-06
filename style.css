@@ -1,3 +1,8 @@
+/*---- FONTS ----*/
+@import url('https://fonts.googleapis.com/css?family=Berkshire+Swash');
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+/*---- GENERAL ----*/
 * {
     box-sizing: border-box;
 }
@@ -6,9 +11,11 @@ body {
     font-family: Avenir, sans-serif;
     background-image:url(./images/background_2.jpg);
     background-attachment: fixed;
-    /* background-color: #3E4454;
-    background: -webkit-linear-gradient(180deg, #F2EDEB, #3E4454);*/
 }
+
+h1, h2, h3, h4, h5, h6 { font-family: 'Berkshire Swash', cursive; }
+
+p, button { font-family: 'Raleway', sans-serif; }
 
 header {
     padding: 1%;
@@ -21,12 +28,22 @@ header {
 #memory_board {
     display: grid;
     width: 80%;
-    grid-template-columns:repeat(4, 1fr);
-    grid-template-rows:repeat(4, 1fr);
+    /*grid-template-columns:repeat(4, 1fr);
+    grid-template-rows:repeat(4, 1fr);*/
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-gap: 15px;
-    justify-content: center;
-    align-content: center;
+    justify-items: center;
+    align-items: center;
 }
+/*
+@media screen and (max-width: 480px) {
+    #memory_board {
+        display: grid;
+        grid-template-columns:repeat(2, 1fr);
+        grid-template-rows:repeat(10, 1fr);
+    }
+}*/
+
 
 #memory_board > div {
     background: url(./images/lotr.jpg) no-repeat;
@@ -34,9 +51,9 @@ header {
     position: relative;
     width: 180px;
     height:200px;
-    grid
     cursor: pointer;
     transition: 0.7s ease;
+    box-shadow: 5px 5px 10px #000;
 }
 
 div > img {
@@ -44,7 +61,7 @@ div > img {
     position: absolute;
     width: 100%;
     height: 100%;
-    box-shadow: 5px 5px 10px #888;
+    box-shadow: 5px 5px 10px #000;
     pointer-events:none;
     opacity: 0;
 }
@@ -55,22 +72,25 @@ button {
     text-align: center;
     font-size: 1em;
     border-radius: 5px;
-    box-shadow: 5px 5px 10px #888;
-    font-family: Avenir, sans-serif;
+    border: gold;
+    box-shadow: 5px 5px 10px #000;
+    background-color: gold;
     cursor: pointer;
+}
+.buttonDiv {
+
 }
 
 .winSection {
     background-color: white;
     padding: 5%;
     margin-bottom: 2%;
+
     display: none;
 }
 
 /*--- WHEN CARD IS CLICKED ---*/
 .clicked {
-    /*transform-origin: center;
-    transform: rotateX(180deg);*/
     -webkit-transform: rotateY(180deg);
     -moz-transform: rotateY(180deg);
     -o-transform: rotateY(180deg);
@@ -79,10 +99,9 @@ button {
 
     /*transition: 0.8s;*/
     /*transition: 0.7s ease-in-out;*/
-    /*background-image: none;*/
 }
 
 .imgClicked {
     opacity: 1;
-    transition: 0.66s ease;
+    transition: 0.67s ease;
 }
