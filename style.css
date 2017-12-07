@@ -13,7 +13,7 @@ body {
     background-attachment: fixed;
 }
 
-h1, h2, h3, h4, h5, h6 { font-family: 'Berkshire Swash', cursive; }
+h1, h2 { font-family: 'Berkshire Swash', cursive; }
 
 p, button { font-family: 'Raleway', sans-serif; }
 
@@ -25,69 +25,71 @@ header {
     box-shadow: 0px 3px 10px #888;
 }
 
+.wrapper {
+    width:100%;
+    display: grid;
+    justify-content: center;
+}
+
 #memory_board {
     display: grid;
-    width: 80%;
-    /*grid-template-columns:repeat(4, 1fr);
-    grid-template-rows:repeat(4, 1fr);*/
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    /*width: 80%;*/
+    grid-template-columns:repeat(4, 1fr);
+    grid-template-rows:repeat(4, 1fr);
     grid-gap: 15px;
     justify-items: center;
     align-items: center;
 }
-/*
-@media screen and (max-width: 480px) {
+
+@media screen and (max-width: 790px) {
     #memory_board {
-        display: grid;
-        grid-template-columns:repeat(2, 1fr);
-        grid-template-rows:repeat(10, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     }
-}*/
+}
 
 
 #memory_board > div {
     background: url(./images/lotr.jpg) no-repeat;
-    background-color: white;
     position: relative;
     width: 180px;
     height:200px;
     cursor: pointer;
     transition: 0.7s ease;
-    box-shadow: 5px 5px 10px #000;
-}
-
-div > img {
     border-radius: 4px;
+    box-shadow: 5px 5px 10px #080808;
+}
+div > img {
     position: absolute;
     width: 100%;
     height: 100%;
-    box-shadow: 5px 5px 10px #000;
+    border-radius: 4px;
+    box-shadow: 5px 5px 10px #080808;
     pointer-events:none;
     opacity: 0;
 }
 
 button {
     width: auto;
-    height:auto;
+    height: auto;
     text-align: center;
-    font-size: 1em;
+    font-size: 1.2em;
     border-radius: 5px;
-    border: gold;
-    box-shadow: 5px 5px 10px #000;
+    border: 2px solid gold;
+    box-shadow: 5px 5px 10px #080808;
     background-color: gold;
+    padding:1%;
+    font-variant: small-caps;
     cursor: pointer;
-}
-.buttonDiv {
-
+    outline: none;
 }
 
-.winSection {
-    background-color: white;
-    padding: 5%;
-    margin-bottom: 2%;
-
-    display: none;
+button:hover {
+    background-color: transparent;
+    color: gold;
+    transition: 0.3s ease-in-out;
 }
+.buttonDiv { }
+
 
 /*--- WHEN CARD IS CLICKED ---*/
 .clicked {
@@ -96,12 +98,19 @@ button {
     -o-transform: rotateY(180deg);
     transform: rotateY(180deg);
     pointer-events:none;
-
-    /*transition: 0.8s;*/
-    /*transition: 0.7s ease-in-out;*/
 }
 
 .imgClicked {
     opacity: 1;
     transition: 0.67s ease;
+}
+
+
+/*--- WHEN GAME IS COMPLETED ---*/
+.winSection {
+    background-color: ghostWhite;
+    padding: 3%;
+    margin: 2%;
+    transition: 0.67s ease;
+    /*display: none;*/
 }

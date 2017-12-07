@@ -14,11 +14,11 @@ for (let i = memoryBoard.children.length; i >= 0; i--) {
 }
 
 
-// --- ADD CLICK AND SEND TO THE COMPARISON ARRAY ---
+// --- CLICK EVENT, SEND TO THE COMPARISON ARRAY ---
 cards.forEach((cardEach) => {
     cardEach.addEventListener('click', (e) => {
 
-        //--- FLIP CARDS ---
+        //--- FLIP CARDS, ADD CLICKED-CLASS ---
         let currentDiv = e.target;
             currentDiv.classList.toggle('clicked');
 
@@ -47,16 +47,17 @@ let compareFunction = (dataset) => {
             pairCounter++; //add if match
             console.log(pairCounter);
 
-            compArray = []; //empty comparison array
-            divArray = []; //empty div array
+            compArray = []; //clear comparison array
+            divArray = []; //clear div array
 
             if (pairCounter == 8) {
                 console.log('Congratz, you\'ve made it!');
+                document.querySelector('.winSection');
             }
         }
 
         else {
-            //Flip back if not match, aka remove clicked class
+            //Flip back if no match, aka remove clicked/imgClicked class
             console.log('loser...');
 
             setTimeout(function() {
@@ -67,7 +68,7 @@ let compareFunction = (dataset) => {
                 compArray = []; //empty comparison array
                 divArray = []; //empty div array
 
-            }, 700);
+            }, 1000);
         }
     }
 }

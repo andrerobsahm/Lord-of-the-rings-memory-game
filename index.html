@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link rel="stylesheet" href="style.css">
         <title>The LOTR Memory Game</title>
 
@@ -12,16 +12,17 @@
     <body>
         <header>
             <h1>Welcome</h1>
-            <h3>To The LOTR Memory Game!</h3>
-            <p>Click on one of the tiles to begin the game</p>
+            <h2>To The LOTR Memory Game!</h2>
+            <p>Click on one of the tiles to begin</p>
         </header>
 
         <!-- to slid in from top if success -->
-        <section class="winSection">
+        <!-- <section class="winSection">
             <h3>Congratulations, you just solved the puzzle! Do you want to have another go?</h3>
             <!-- <button class="reset" type="button" name="button">Create new board</button> -->
-        </section>
+        </section> -->
 
+    <div class="wrapper">
 
         <section id="memory_board">
             <div class="card" data-card="0">
@@ -90,10 +91,9 @@
         </section>
 
         <div class="buttonDiv">
-            <button class="reset" type="button" name="button">Start over!
-            </button>
+            <button class="reset" type="button" name="button">Start over!</button>
         </div>
-
+    </div>
         <script type="text/javascript" src="script.js"></script>
 
     </body>
