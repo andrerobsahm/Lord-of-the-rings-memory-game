@@ -5,16 +5,22 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link rel="stylesheet" href="style.css">
         <title>The LOTR Memory Game</title>
-
+        <link rel="icon" type="image/png" href="./images/lotr_icon.png">
         <script>
         </script>
     </head>
+    
     <body>
         <header>
+            <audio controls>
+                <source src="fellowship.mp3" type="audio/mp3">
+                <p>Sorry, your browser does not seem to support the audio element.</p>
+            </audio>
             <h1>Welcome</h1>
             <h2>To The LOTR Memory Game!</h2>
             <p>Click on one of the tiles to begin</p>
         </header>
+
 
         <!-- to slid in from top if success -->
         <!-- <section class="winSection">
@@ -88,13 +94,15 @@
             <div class="card" data-card="7">
                 <img src="images/arwen.jpg">
             </div>
-        </section>
+
+        </section> <!--end memory_board -->
 
         <div class="buttonDiv">
             <button class="reset" type="button" name="button">Start over!</button>
         </div>
-    </div>
-        <script type="text/javascript" src="script.js"></script>
 
+     </div> <!--end wrapper -->
+
+        <script type="text/javascript" src="script.js"></script>
     </body>
 </html>
