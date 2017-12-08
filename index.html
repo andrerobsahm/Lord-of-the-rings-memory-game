@@ -9,13 +9,18 @@
         <script>
         </script>
     </head>
-    
+
     <body>
         <header>
-            <audio controls>
-                <source src="fellowship.mp3" type="audio/mp3">
-                <p>Sorry, your browser does not seem to support the audio element.</p>
-            </audio>
+            <div class="audio-player-controls">
+                <audio id="audioPlayer" preload="auto" autoplay loop>
+                    <source src="fellowship.mp3" type="audio/mpeg" />
+                    <!--<source src="track.ogg" type="audio/ogg" /> for firefox -->
+                    <p>Sorry, your browser does not seem to support the audio element.</p>
+                </audio>
+                <button type="button" name="button"><a onClick="togglePlay()">Play/Pause</a></button>
+            </div>
+
             <h1>Welcome</h1>
             <h2>To The LOTR Memory Game!</h2>
             <p>Click on one of the tiles to begin</p>
@@ -23,10 +28,13 @@
 
 
         <!-- to slid in from top if success -->
-        <!-- <section class="winSection">
+        <div class="winContainer">
+
+        <section class="winSection">
             <h3>Congratulations, you just solved the puzzle! Do you want to have another go?</h3>
-            <!-- <button class="reset" type="button" name="button">Create new board</button> -->
-        </section> -->
+            <button class="tryAgain" type="button" name="button">Create new board</button>
+        </section>
+    </div>
 
     <div class="wrapper">
 

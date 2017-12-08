@@ -3,8 +3,10 @@
 let cards = document.querySelectorAll('.card');
 let wrapper = document.querySelector('.wrapper');
 let compArray = []; //where we compare if its a match
-let pairCounter = 0; //counts number of pairs
 let divArray = [];
+let pairCounter = 0; //counts number of pairs
+let winContainer = document.querySelector('.winContainer');
+let winSection = document.querySelector('.winSection');
 
 
 // --- CREATE A NEW BOARD ---
@@ -26,7 +28,6 @@ cards.forEach((card) => {
         //--- PUSH TO COMPARE FUNCTION ---
         let currentCard = e.target.dataset.card;
         let compare = compArray.push(currentCard);
-        // console.log(currentCard);
 
         //--- PUSH TO THE DIV ARRAY ---
         divArray.push(currentDiv);
@@ -47,9 +48,14 @@ let compareFunction = (dataset) => {
             compArray = []; //clear comparison array
             divArray = []; //clear div array
 
-            if (pairCounter == 8) {
+            if (pairCounter == 1) {
                 console.log('Congratz, you\'ve made it!');
-                document.querySelector('.winSection');
+
+
+                winContainer.style.display = "flex";
+                    setTimeout(function() {
+                        winSection.classList.add('winning');
+                    }, 100)
             }
         }
 
@@ -88,6 +94,20 @@ function resetBoard() {
     }
 }
 
+//--- BOTTOM RESET BUTTON ---
 document.querySelector('.reset').addEventListener('click', function() {
     return resetBoard();
 })
+//--- WINNING RESET BUTTON ---
+document.querySelector('.tryAgain').addEventListener('click', function() {
+    winSection.classList.remove('winning');
+    winContainer.style.display = "none";
+    return resetBoard();
+})
+
+
+//--- PAUSE/PLAY AUDIO PLAYER ---
+let audio = document.getElementById("audioPlayer");
+function togglePlay() {
+  return audio.paused ? audio.play() : audio.pause();
+};
