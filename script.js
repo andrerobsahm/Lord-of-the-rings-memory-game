@@ -1,16 +1,14 @@
-'use strict';
+"use strict";
 
+let memoryBoard = document.querySelector('#memory_board');
 let cards = document.querySelectorAll('.card');
 let wrapper = document.querySelector('.wrapper');
-let compArray = []; //where we compare if its a match
-let divArray = [];
 let pairCounter = 0; //counts number of pairs
 let winContainer = document.querySelector('.winContainer');
 let winSection = document.querySelector('.winSection');
+let compArray = [];
+let divArray = [];
 
-
-// --- CREATE A NEW BOARD ---
-let memoryBoard = document.querySelector('#memory_board');
 resetBoard();
 
 
@@ -20,7 +18,8 @@ cards.forEach((card) => {
 
         //--- FLIP CARDS, ADD CLICKED-CLASS ---
         let currentDiv = e.target;
-            currentDiv.classList.toggle('clicked');
+            currentDiv.classList.add('clicked');
+            divArray.push(currentDiv);
 
         let currentImg = currentDiv.querySelector('img');
             currentImg.classList.add('imgClicked');
@@ -29,12 +28,9 @@ cards.forEach((card) => {
         let currentCard = e.target.dataset.card;
         let compare = compArray.push(currentCard);
 
-        //--- PUSH TO THE DIV ARRAY ---
-        divArray.push(currentDiv);
-
         return compareFunction(currentCard);
     })
-})
+});
 
 
 // --- COMPARE SELECTED CARDS, AND CLEAR AFTER COMPARISON ---
@@ -42,20 +38,20 @@ let compareFunction = (dataset) => {
     if (compArray.length == 2) {
         if (compArray[0] == compArray[1]) {
             console.log('Success!');
-            pairCounter++; //add if match
+            pairCounter++; //add to counter if match
             console.log(pairCounter);
 
             compArray = []; //clear comparison array
             divArray = []; //clear div array
 
-            if (pairCounter == 1) {
-                console.log('Congratz, you\'ve made it!');
 
+            if (pairCounter == 8) {
+                console.log('Congratz, you\'ve made it!');
 
                 winContainer.style.display = "flex";
                     setTimeout(function() {
                         winSection.classList.add('winning');
-                    }, 100)
+                    }, 100);
             }
         }
 
@@ -78,13 +74,13 @@ let compareFunction = (dataset) => {
             }, 800);
         }
     }
-}
+};
 
 //--- GENERERATE NEW MEMORY BOARD - RESET BUTTON ---
 function resetBoard() {
     cards.forEach((card) => {
-        card.querySelector('img').classList.remove('imgClicked');
         card.classList.remove('clicked');
+        card.querySelector('img').classList.remove('imgClicked');
         compArray = []; //empty comparison array
         divArray = []; //empty div array
     })
@@ -92,16 +88,20 @@ function resetBoard() {
     for (let i = memoryBoard.children.length; i >= 0; i--) {
         memoryBoard.appendChild(memoryBoard.children[Math.random() * i | 0]);
     }
+
+    pairCounter = 0;
 }
 
 //--- BOTTOM RESET BUTTON ---
 document.querySelector('.reset').addEventListener('click', function() {
     return resetBoard();
 })
+
 //--- WINNING RESET BUTTON ---
 document.querySelector('.tryAgain').addEventListener('click', function() {
     winSection.classList.remove('winning');
-    winContainer.style.display = "none";
+    winContainer.style.display = 'none';
+
     return resetBoard();
 })
 
@@ -110,4 +110,4 @@ document.querySelector('.tryAgain').addEventListener('click', function() {
 let audio = document.getElementById("audioPlayer");
 function togglePlay() {
   return audio.paused ? audio.play() : audio.pause();
-};
+}

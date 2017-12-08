@@ -12,13 +12,39 @@
 
     <body>
         <header>
+
             <div class="audio-player-controls">
                 <audio id="audioPlayer" preload="auto" autoplay loop>
                     <source src="fellowship.mp3" type="audio/mpeg" />
                     <!--<source src="track.ogg" type="audio/ogg" /> for firefox -->
                     <p>Sorry, your browser does not seem to support the audio element.</p>
                 </audio>
-                <button type="button" name="button"><a onClick="togglePlay()">Play/Pause</a></button>
+                <!-- <img id="audio-player-icon" src="audio_icon.png" alt=""><a onClick="togglePlay()"></a></img> -->
+
+                <!-- <input class="audio-player-button" type="button" value="audio_icon" /><a onClick="togglePlay()">Play/Pause</a></input> -->
+                <!-- <img class="audio-player-button" src="audio_icon.png"/> -->
+
+                <!-- <button>
+                    <img class="audio-player-button" src="audio_icon.png" alt="Audio player">
+                        <a onClick="togglePlay()"></a>
+                    </img>
+                </button> -->
+
+                <!-- <img src="audio_icon.png" alt="Audio player" width="auto" height:"auto">
+                    <a onClick="togglePlay()"></a>
+                </img> -->
+
+                <!-- <a class="audio-player-button" onClick="togglePlay()"></a> -->
+
+
+                <!-- THIS WORKS -->
+                <!-- <button class="button" type="button" name="button">
+                    <a onClick="togglePlay()">Play/Pause</a>
+                </button> -->
+
+                <a class="audio-player-button" onClick="togglePlay()">
+                    <button class="button" type="button" name="button">Play/Pause</button>
+                </a>
             </div>
 
             <h1>Welcome</h1>
@@ -29,12 +55,11 @@
 
         <!-- to slid in from top if success -->
         <div class="winContainer">
-
-        <section class="winSection">
-            <h3>Congratulations, you just solved the puzzle! Do you want to have another go?</h3>
-            <button class="tryAgain" type="button" name="button">Create new board</button>
-        </section>
-    </div>
+            <section class="winSection">
+                <h3>Congratulations, you just solved the puzzle! Do you want to have another go?</h3>
+                <button class="button tryAgain" type="button" name="button">Create new board</button>
+            </section>
+        </div>
 
     <div class="wrapper">
 
@@ -106,7 +131,7 @@
         </section> <!--end memory_board -->
 
         <div class="buttonDiv">
-            <button class="reset" type="button" name="button">Start over!</button>
+            <button class="button reset" type="button" name="button">Start over!</button>
         </div>
 
      </div> <!--end wrapper -->

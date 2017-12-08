@@ -6,7 +6,9 @@
 * {
     box-sizing: border-box;
 }
-
+html {
+    background-color: #080808;
+}
 body {
     background-image: url(./images/background_2.jpg);
     background-attachment: fixed;
@@ -15,17 +17,17 @@ body {
 h1, h2 {font-family: 'Berkshire Swash', cursive;}
 h1 {font-size: 45px;}
 
-p, button { font-family: 'Raleway', sans-serif; }
+p { font-family: 'Raleway', sans-serif; }
 
-.audio-player-controls {
+.audio-player-button {
     display: flex;
     align-content: flex-start;
 }
 
 header {
-    padding: 1%;
     background-color: tomato;
     text-align: center;
+    padding: 1%;
     margin-bottom: 2%;
     box-shadow: 0px 3px 10px #080808;
 }
@@ -70,11 +72,18 @@ div > img {
     height: 100%;
     border-radius: 4px;
     box-shadow: 5px 5px 10px #080808;
-    pointer-events:none;
     opacity: 0;
+    pointer-events:none;
 }
 
-button {
+
+/*--- BUTTONS ---*/
+.buttonDiv {
+    margin:2%;
+}
+
+.button {
+    font-family: 'Raleway', sans-serif;
     width: auto;
     height: auto;
     text-align: center;
@@ -88,24 +97,17 @@ button {
     cursor: pointer;
     outline: none;
 }
-
-
-/*--- BUTTONS ---*/
-.buttonDiv {
-    margin:2%;
-}
-button:hover {
+.button:hover {
     background-color: #080808;
     color: gold;
     transition: 0.3s ease-in-out;
 }
-button:focus {
+.button:focus {
     background-color: gold;
     color: gold;
     color: inherit;
     transition: 0.3s ease-in-out;
 }
-
 
 
 /*--- WHEN CARD IS CLICKED ---*/
@@ -114,12 +116,13 @@ button:focus {
     -moz-transform: rotateY(180deg);
     -o-transform: rotateY(180deg);
     transform: rotateY(180deg);
-    pointer-events:none;
+    pointer-events: none;
 }
 
 .imgClicked {
     opacity: 1;
     transition: 0.67s ease;
+    pointer-events: none;
 }
 
 .container_clicked {
