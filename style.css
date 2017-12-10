@@ -3,26 +3,19 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 
 /*---- GENERAL ----*/
-* {
-    box-sizing: border-box;
-}
-html {
-    background-color: #080808;
-}
+* { box-sizing: border-box;}
+
+html { background-color: #080808; }
+
 body {
     background-image: url(./images/background_2.jpg);
-    background-attachment: fixed;
+    background-attachment: cover;
 }
 
 h1, h2 {font-family: 'Berkshire Swash', cursive;}
 h1 {font-size: 45px;}
 
 p { font-family: 'Raleway', sans-serif; }
-
-.audio-player-button {
-    display: flex;
-    align-content: flex-start;
-}
 
 header {
     background-color: tomato;
@@ -31,40 +24,67 @@ header {
     margin-bottom: 2%;
     box-shadow: 0px 3px 10px #080808;
 }
+.audio-player-button {
+    display: flex;
+    align-content: flex-start;
+}
 
 .wrapper {
-    margin:0;
-    width:100%;
-    display: grid;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 #memory_board {
-    display: grid;
-    /*width: 80%;*/
-    grid-template-columns:repeat(4, 1fr);
-    grid-template-rows:repeat(4, 1fr);
-    grid-gap: 15px;
-    align-items: center;
+    /*width: calc(70%);*/
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
-@media screen and (max-width: 790px) {
-    #memory_board {
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    }
+@media screen and (max-width: 425px) {
+    #memory_board { width:95%; }
+    #memory_board > div { width: 100vw; }
+    h1 { font-size: 25px; }
+
 }
 
 
 #memory_board > div {
     background: url(./images/lotr.jpg) no-repeat;
-    background-size: contain;
+    background-size: cover;
     position: relative;
-    width: 180px;
-    height: 180px;
+    width: 13vw;
+    /*height: 10rem;*/
+    /*width: 150px;*/
+    /*width: calc(100% / 4 * 1)*/
+    /*height: auto;*/
+    /*height: 160px;*/
     border-radius: 4px;
     transition: 0.6s ease;
     box-shadow: 5px 5px 10px #080808;
     cursor: pointer;
+    margin: 1%;
 }
+
+#memory_board > div:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+/*@media screen and (max-width: 768px) {
+    #memory_board {
+        width:90%;
+    }
+
+    #memory_board > div {
+        width: 120px;
+        height: 130px;
+    }
+}*/
+
 
 div > img {
     position: absolute;
@@ -138,7 +158,6 @@ div > img {
     justify-content: center;
     width: 100vw;
     height: 100vh;
-    /*transition: 1s ease;*/
 }
 
 .winSection {
@@ -155,6 +174,5 @@ div > img {
 
 .winning {
     opacity: 0.9;
-    /*transition: 1s ease;*/
     transform: translateY(0px);
 }
