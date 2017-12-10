@@ -3,7 +3,7 @@
 let memoryBoard = document.querySelector('#memory_board');
 let cards = document.querySelectorAll('.card');
 let wrapper = document.querySelector('.wrapper');
-let pairCounter = 0; //counts number of pairs
+let pairCounter = 0; //counts the number of pairs
 let winContainer = document.querySelector('.winContainer');
 let winSection = document.querySelector('.winSection');
 let compArray = [];
@@ -56,7 +56,7 @@ let compareFunction = (dataset) => {
         }
 
         else {
-            //Flip back if no match, aka remove clicked/imgClicked class
+            //Flip back if no match, remove clicked/imgClicked class
             console.log('loser...');
 
             wrapper.classList.add('container_clicked');
