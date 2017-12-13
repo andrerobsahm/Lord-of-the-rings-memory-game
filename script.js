@@ -102,14 +102,7 @@ document.querySelector('.tryAgain').addEventListener('click', function() {
 })
 
 //--- PAUSE/PLAY AUDIO PLAYER ---
-
-document.querySelector('.audio_player_button').addEventListener('click', function() {
-    let audio = document.getElementById("audioPlayer");
+document.querySelector('.audioPlayerButton').addEventListener('click', function() {
+    const audio = document.querySelector('#audioSource');
     return audio.paused ? audio.play() : audio.pause();
 })
-
-// let audio = document.getElementById("audioPlayer");
-//
-// function togglePlay() {
-//     return audio.paused ? audio.play() : audio.pause();
-// }

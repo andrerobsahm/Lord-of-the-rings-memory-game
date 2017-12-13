@@ -79,12 +79,12 @@ div>img {
 }
 
 /*--- BUTTONS ---*/
-.audio-player {
+.audioPlayer {
     position: relative;
     margin-top: 5%;
 }
 
-.audio_player_button {
+.audioPlayerButton {
     position: absolute;
     display: block;
 }
