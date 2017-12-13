@@ -59,7 +59,7 @@ header {
     transition: 0.6s ease;
     box-shadow: 5px 5px 10px #080808;
     cursor: pointer;
-    margin: 1%;
+    margin: 1vh;
 }
 
 #memory_board>div:after {
@@ -90,7 +90,7 @@ div>img {
 }
 
 .buttonDiv {
-    margin: 2%;
+    margin: 2vh;
 }
 
 .button {
