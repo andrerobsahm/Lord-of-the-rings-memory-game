@@ -3,7 +3,7 @@
 let memoryBoard = document.querySelector('#memory_board');
 let cards = document.querySelectorAll('.card');
 let wrapper = document.querySelector('.wrapper');
-let pairCounter = 0; //counts the number of pairs
+let pairCounter = 0;
 let winContainer = document.querySelector('.winContainer');
 let winSection = document.querySelector('.winSection');
 let compArray = [];
@@ -12,17 +12,17 @@ let divArray = [];
 resetBoard();
 
 
-// --- CLICK EVENT, SEND TO THE COMPARISON ARRAY ---
+// --- CLICK EVENT, SEND TO THE COMPARISON ---
 cards.forEach((card) => {
     card.addEventListener('click', (e) => {
 
         //--- FLIP CARDS, ADD CLICKED-CLASS ---
         let currentDiv = e.target;
-            currentDiv.classList.add('clicked');
-            divArray.push(currentDiv);
+        currentDiv.classList.add('clicked');
+        divArray.push(currentDiv);
 
         let currentImg = currentDiv.querySelector('img');
-            currentImg.classList.add('imgClicked');
+        currentImg.classList.add('imgClicked');
 
         //--- PUSH TO COMPARE FUNCTION ---
         let currentCard = e.target.dataset.card;
@@ -49,18 +49,14 @@ let compareFunction = (dataset) => {
                 console.log('Congratz, you\'ve made it!');
 
                 winContainer.style.display = "flex";
-                    setTimeout(function() {
-                        winSection.classList.add('winning');
-                    }, 100);
+                setTimeout(function() {
+                    winSection.classList.add('winning');
+                }, 100);
             }
-        }
-
-        else {
+        } else {
             //Flip back if no match, remove clicked/imgClicked class
-            console.log('loser...');
-
             wrapper.classList.add('container_clicked');
-            setTimeout(function(){
+            setTimeout(function() {
                 wrapper.classList.remove('container_clicked');
             }, 800);
 
@@ -105,9 +101,15 @@ document.querySelector('.tryAgain').addEventListener('click', function() {
     return resetBoard();
 })
 
-
 //--- PAUSE/PLAY AUDIO PLAYER ---
-let audio = document.getElementById("audioPlayer");
-function togglePlay() {
-  return audio.paused ? audio.play() : audio.pause();
-}
+
+document.querySelector('.audio_player_button').addEventListener('click', function() {
+    let audio = document.getElementById("audioPlayer");
+    return audio.paused ? audio.play() : audio.pause();
+})
+
+// let audio = document.getElementById("audioPlayer");
+//
+// function togglePlay() {
+//     return audio.paused ? audio.play() : audio.pause();
+// }

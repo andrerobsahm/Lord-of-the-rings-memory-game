@@ -1,58 +1,42 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <link rel="stylesheet" href="style.css">
-        <title>The LOTR Memory Game</title>
-        <link rel="icon" type="image/png" href="./images/lotr_icon.png">
-        <script>
-        </script>
-    </head>
 
-    <body>
-        <header>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/5.0.0/sanitize.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>The LOTR Memory Game</title>
+    <link rel="icon" type="image/png" href="./images/lotr_icon.png">
+    <script>
+    </script>
+</head>
 
-            <div class="audio-player">
-                <audio id="audioPlayer" preload="auto" autoplay loop>
-                    <source src="audio/fellowship.mp3" type="audio/mpeg" />
-                    <!--<source src="track.ogg" type="audio/ogg" /> for firefox -->
-                    <p>Sorry, your browser does not seem to support the audio element.</p>
-                </audio>
-                <!-- <img id="audio-player-icon" src="audio_icon.png" alt=""><a onClick="togglePlay()"></a></img> -->
+<body>
+    <header>
+        <div class="audio-player">
+            <audio id="audioPlayer" preload="auto" autoplay loop>
+                <source src="audio/fellowship.mp3" type="audio/mpeg" />
+                <!--<source src="track.ogg" type="audio/ogg" /> for firefox -->
+                <p>Sorry, your browser does not seem to support the audio element.</p>
+            </audio>
 
-                <!-- <input class="audio-player-button" type="button" value="audio_icon" /><a onClick="togglePlay()">Play/Pause</a></input> -->
-                <!-- <img class="audio-player-button" src="audio_icon.png"/> -->
-
-                <!-- <button>
-                    <img class="audio-player-button" src="audio_icon.png" alt="Audio player">
-                        <a onClick="togglePlay()"></a>
-                    </img>
-                </button> -->
-
-                <!-- <img src="audio_icon.png" alt="Audio player" width="auto" height:"auto">
-                    <a onClick="togglePlay()"></a>
-                </img> -->
-
-                <!-- THIS WORKS -->
-                <a class="audio-player-button" onClick="togglePlay()">
-                    <button class="button" type="button" name="button">Play/Pause</button>
-                </a>
-            </div>
-
-            <h1>Welcome</h1>
-            <h2>To The LOTR Memory Game!</h2>
-            <p>Click on one of the tiles to begin</p>
-        </header>
-
-
-        <!-- to slide in from top if success -->
-        <div class="winContainer">
-            <section class="winSection">
-                <h3>Congratulations, you just solved the puzzle! Do you want to have another go?</h3>
-                <button class="button tryAgain" type="button" name="button">Create new board</button>
-            </section>
+            <button class="button audio_player_button" type="button" name="button">Play/Pause</button>
         </div>
+
+        <h1>Welcome</h1>
+        <h2>To The LOTR Memory Game!</h2>
+        <p>Click on one of the cards to begin</p>
+    </header>
+
+
+    <!-- slide in from top if success -->
+    <div class="winContainer">
+        <section class="winSection">
+            <h3>Congratulations, you just solved the puzzle! Do you want to have another go?</h3>
+            <button class="button tryAgain" type="button" name="button">Create new board</button>
+        </section>
+    </div>
 
     <div class="wrapper">
 
@@ -121,14 +105,15 @@
                 <img src="images/arwen.jpg">
             </div>
 
-        </section> <!--end memory_board -->
+        </section><!--/memory_board -->
 
         <div class="buttonDiv">
             <button class="button reset" type="button" name="button">Start over!</button>
         </div>
 
-     </div> <!--end wrapper -->
+    </div><!--/wrapper -->
 
-        <script type="text/javascript" src="script.js"></script>
-    </body>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+
 </html>
