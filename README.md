@@ -13,6 +13,7 @@
 - Clone/download the repository from GitHub
 - Open the folder you just cloned
 - Open the index.html file in your browser of choice
+- Or - just visit https://andrerobsahm.github.io/Lord-of-the-rings-memory-game/
 
 
 ### If needed - here are the basics...
@@ -32,7 +33,7 @@ André Robsahm
 
 #### Test users
 + Nor Robsahm Månsson (my 3,5 year old daughter)
-+ to be added
++ Albert Norberg
 + to be added
 
 ---
