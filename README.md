@@ -6,8 +6,7 @@
 ## The Assignment
 - Create a memory game in HTML, CSS and JavaScript (with no third-party frameworks like jQuery)
 - The cards should be randomly positioned before a new game start
-- The game must include a replay button that reorder the cards randomly, (using Javascript and not through a page reload!)
-
+- The game must include a replay button that reorder the cards randomly (using Javascript and not through a page reload!)
 
 ## How to try it out
 - Clone/download the repository from GitHub
@@ -20,13 +19,10 @@
 - Begin the game by clicking one of the cards marked with the LOTR-logo
 - Find the 8 pairs
 - Play again!
-
 - The game contains background music, if you want to - pause it using the button in the upper left corner
 
 ## Written in
-- HTML
-- CSS
-- Javascript
+- HTML, CSS & Javascript
 
 ## Author
 André Robsahm
@@ -34,7 +30,7 @@ André Robsahm
 #### Test users
 + Nor Robsahm Månsson (my 3,5 year old daughter)
 + Albert Norberg
-+ to be added
++ Andreas Lundqvist
 
 ---
 _André Robsahm, Yrgo Göteborg, 2017_
